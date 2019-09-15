@@ -12,5 +12,5 @@ echo "module.exports = {
     username: '$username',
     password: '$password'
 }" > creds.js
-
+chmod +x creds.js
 docker-compose up
