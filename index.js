@@ -104,7 +104,7 @@ async function getNumPages(page) {
 }
 
 function upsertUser(userObj) {
-  const DB_URL = 'mongodb://localhost/thal';
+  const DB_URL = 'mongodb://mongo:27017/thal';
 
   if (mongoose.connection.readyState == 0) {
     mongoose.connect(DB_URL);
