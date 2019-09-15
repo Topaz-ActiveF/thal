@@ -27,7 +27,7 @@ async function run() {
   await page.keyboard.type(CREDS.password);
 
   await page.click(BUTTON_SELECTOR);
-  await page.waitForNavigation();
+  // await page.waitForNavigation();
 
   const userToSearch = 'john';
   const searchUrl = `https://github.com/search?q=${userToSearch}&type=Users&utf8=%E2%9C%93`;
