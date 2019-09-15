@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 
 async function run() {
+
   const browser = await puppeteer.launch({
     //headless: false
+	args: ['--no-sandbox']
+
   });
 
   const page = await browser.newPage();
