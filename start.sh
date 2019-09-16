@@ -13,4 +13,8 @@ echo "module.exports = {
     password: '$password'
 }" > creds.js
 chmod +x creds.js
-docker-compose up
+
+echo "Increace vm.max_map_count"
+sysctl -w vm.max_map_count=262144
+
+docker-compose up -d
