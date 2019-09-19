@@ -13,7 +13,7 @@
 
 ```$ sudo chmod +x ./start.sh```
 
-```$ sudp ./start.sh```
+```$ sudo ./start.sh```
 
 
 
