@@ -4,7 +4,51 @@ services:
     build: .
     depends_on:
     - mongo
+    - elasticsearch
+    - logstash
+    - kibana
+    - filebeat
+
   mongo:
     image: mongo
     ports:
     - "27017:27017"
+
+  elasticsearch:
+    build: elasticsearch/
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+    restart: unless-stopped
+
+  logstash:
+    build: logstash/
+    command: -f /etc/logstash/conf.d/
+    volumes:
+      - ./logstash/config:/etc/logstash/conf.d
+    ports:
+      - "5000:5000"
+      - "5044:5044"
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+
+  kibana:
+    build: kibana/
+    volumes:
+      - ./kibana/config/:/opt/kibana/config/
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+
+  filebeat:
+    build: filebeat/
+    volumes:
+      - ./filebeat/config:/etc/filebeat
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
