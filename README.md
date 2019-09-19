@@ -1,9 +1,23 @@
 
 # Getting started with Puppeteer and Chrome Headless for Web Scraping
 
-**Here is a link to [Medium Article](https://medium.com/@e_mad_ehsan/getting-started-with-puppeteer-and-chrome-headless-for-web-scrapping-6bf5979dee3e)**
+**Prerequisites**
+1. [`Docker`](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
+2. [`Docker-Compose`](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 
-**Here is the [Chinese Version](https://github.com/csbun/thal) thanks to [@csbun](https://github.com/csbun/)** 
+**Steps to run the app with Docker**
+
+```$ git clone https://github.com/Topaz-ActiveF/thal.git```
+
+```$ cd thal```
+
+```$ sudo chmod +x ./start.sh```
+
+```$ sudp ./start.sh```
+
+
+
+**Here is a link to [Medium Article](https://medium.com/@e_mad_ehsan/getting-started-with-puppeteer-and-chrome-headless-for-web-scrapping-6bf5979dee3e)**
 
 ![A Desert in painters perception](./media/desertious.jpg)
 
