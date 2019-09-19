@@ -4,17 +4,9 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 
 async function run() {
-
   const browser = await puppeteer.launch({
-    //headless: false
-	args: [
-		// Required for Docker version of Puppeteer
-      		'--no-sandbox',
-      		'--disable-setuid-sandbox',
-      		// This will write shared memory files into /tmp instead of /dev/shm,
-      		// because Docker’s default for /dev/shm is 64MB
-      		'--disable-dev-shm-usage'
-	]
+//    headless: false
+args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
   const page = await browser.newPage();
@@ -36,7 +28,7 @@ async function run() {
   await page.keyboard.type(CREDS.password);
 
   await page.click(BUTTON_SELECTOR);
-  // await page.waitForNavigation();
+//  await page.waitForNavigation();
 
   const userToSearch = 'john';
   const searchUrl = `https://github.com/search?q=${userToSearch}&type=Users&utf8=%E2%9C%93`;
@@ -113,7 +105,7 @@ async function getNumPages(page) {
 }
 
 function upsertUser(userObj) {
-  const DB_URL = 'mongodb://mongo:27017/thal';
+  const DB_URL = 'mongodb://mongo/thal';
 
   if (mongoose.connection.readyState == 0) {
     mongoose.connect(DB_URL);
