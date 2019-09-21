@@ -33,6 +33,8 @@ filebeat.prospectors:
   paths:
     - logs/*.log
     - logs/*.txt
+    - /usr/share/dockerlogs/data/*/*.log
+    #- /var/log/*.log
     #- c:\programdata\elasticsearch\logs\*
 
   # Configure the file encoding for reading files with international characters
