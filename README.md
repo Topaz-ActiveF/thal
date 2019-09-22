@@ -11,8 +11,6 @@
 
 ```$ cd thal```
 
-```$ sudo chmod +x ./start.sh```
-
 ```$ sudo ./start.sh```
 
 
