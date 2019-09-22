@@ -13,6 +13,8 @@ services:
     image: mongo
     ports:
     - "27017:27017"
+    volumes:
+    - './data:/data/db'
 
   elasticsearch:
     build: elasticsearch/

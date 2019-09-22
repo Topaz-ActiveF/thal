@@ -14,6 +14,8 @@ echo "module.exports = {
 }" > creds.js
 #chmod +x creds.js
 
+mkdir ./data
+
 echo "Increace vm.max_map_count"
 sysctl -w vm.max_map_count=262144
 
